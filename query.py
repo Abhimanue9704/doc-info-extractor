@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from reader import search
+from gen_embeddings import search
 from reranker import hybrid_reranker
 from baseline import baseline
 app = Flask(__name__)

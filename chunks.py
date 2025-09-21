@@ -1,4 +1,4 @@
-def chunk_text_with_metadata(text, source_id, path, chunk_size=100, overlap=50):
+def chunk_text_with_metadata(text, source_id, path, chunk_size=150, overlap=50):
     words = text.split()
     chunks = []
     start = 0
