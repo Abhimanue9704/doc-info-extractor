@@ -13,7 +13,6 @@ def extract_answer_with_citation(query, chunk):
     if not sentences:
         return None, None, None
 
-    # Query embedding (shape [1, hidden_dim])
     query_emb = model.encode([query], convert_to_tensor=True)
 
     best_sentence, best_score = None, -1.0
@@ -21,7 +20,6 @@ def extract_answer_with_citation(query, chunk):
     for sent in sentences:
         sent=clean_text(sent)
         sent_emb = model.encode([sent], convert_to_tensor=True)
-        # Both query_emb and sent_emb now have shape [1, hidden_dim]
         score = torch.cosine_similarity(query_emb, sent_emb).item()
         
         if score > best_score:

@@ -6,18 +6,14 @@ import faiss
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
 def generate_embeddings(chunks_with_meta, db_path="doc_chunks.db"):
-    # print(f"Generating embeddings for {len(chunks_with_meta)} chunks...")
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
     embeddings = []
     
     for chunk in chunks_with_meta:
-        source_id, chunk_index, text = chunk['source_id'],chunk['chunk_index'],chunk['text']  # FIXED: Added path
+        source_id, chunk_index, text = chunk['source_id'],chunk['chunk_index'],chunk['text']
         
-        # print(text)
-            
         emb = model.encode(text)
-        # print(emb)
 
         cursor.execute('''
         INSERT INTO embeddings (source_id, chunk_index, embedding_vector)
@@ -35,21 +31,17 @@ def build_faiss_index(embeddings):
     
     try:
         index = faiss.read_index("embeddings.index")
-        # print(f"Loaded existing index with {index.ntotal} embeddings")
     except:
         index = faiss.IndexFlatIP(dim)
-        # print("Created new FAISS index")
     
     faiss.normalize_L2(embeddings)
     index.add(embeddings)
     
     faiss.write_index(index, "embeddings.index")
-    # print(f"Updated FAISS index, now has {index.ntotal} embeddings")
     
 def search(query, top_k):
     print(f"Searching for: '{query}'")
     
-    # 1. Search FAISS for most similar embeddings
     faiss_index = faiss.read_index("embeddings.index")
     print(f"Loaded FAISS index with {faiss_index.ntotal} embeddings")
     

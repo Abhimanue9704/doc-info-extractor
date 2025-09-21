@@ -4,7 +4,6 @@ def init_db(db_path="doc_chunks.db"):
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
     
-    # Table for chunks
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS chunks (
         source_id TEXT,
@@ -15,7 +14,6 @@ def init_db(db_path="doc_chunks.db"):
     )
     ''')
     
-    # Table for embeddings
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS embeddings (
         source_id TEXT,
