@@ -39,6 +39,7 @@ def hybrid_reranker(query, top_k_chunks, alpha=0.7, beta=0.3):
                 'citation': {
                     'source_id': chunk['source_id'],
                     'chunk_index': chunk['chunk_index'],
+                    'title': chunk['title'],
                     'doc_path': chunk['doc_path']
                 },
                 'vector_similarity': vector_sim,

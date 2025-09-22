@@ -27,6 +27,7 @@ def extract_answer_with_citation(query, chunk):
             best_sentence = sent
 
     citation = {
+        "title": chunk.get("title"),
         "doc_path": chunk.get("doc_path"),
         "source_id": chunk.get("source_id"),
         "chunk_index": chunk.get("chunk_index")

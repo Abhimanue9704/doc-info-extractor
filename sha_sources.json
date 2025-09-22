@@ -1,0 +1,82 @@
+{
+  "8b316be61e0f080207efb9cefee5cbea2bacfbd823a29b3ae5daa6718d286f66": {
+    "title": "ABB — Safety in Control Systems according to EN ISO 13849-1",
+    "url": "https://search.abb.com/library/Download.aspx?DocumentID=2TLC172003B02002"
+  },
+  "852a050d2b53112144fd546aa53801b2fc7147c759b985b7c2bbc57b209cf327": {
+    "title": "BGIA_DGUV — Functional safety of machine controls (Application of EN ISO 13849), 2009 report",
+    "url": "https://www.dguv.de/medien/ifa/en/pub/rep/pdf/rep07/biar0208/rep22008e.pdf"
+  },
+  "4abd5a8c40310525d7d0dca058ee5ec8f3ec250fb24a1f228518bec76b1fc0e3": {
+    "title": "DGUV — Fourth edition of EN ISO 13849-1_ Most important new features in 2023",
+    "url": "https://publikationen.dguv.de/widgets/pdf/download/article/4894"
+  },
+  "d83428a2267bb7a0a4846c0748092f28798fdfa1df6baebb8233028038c5b4dc": {
+    "title": "Eaton — Safety Manual (EN ISO 13849-1 and IEC 62061)",
+    "url": "https://www.eaton.com/content/dam/eaton/markets/machinebuilding/service-and-support/documents/eaton-safety-manual-pu05907001z-en-us.pdf"
+  },
+  "0d6ffe2d7c6cf94c16a726d06700ae4dfa3d8c0777a43518b14a7009285996a3": {
+    "title": "Emerson — Machine Safety Guide_ Pneumatic Solutions",
+    "url": "https://www.emerson.com/documents/automation/brochure-machine-safety-guide-pneumatic-solutions-en-7073434.pdf"
+  },
+  "711262ebf4e628630806afd0e29463b58b1f0021cf9b9fe37e2b78134ff4696f": {
+    "title": "IFA — Functional safety of machine controls (Application of EN ISO 13849), IFA Report 2_2017e",
+    "url": "https://www.dguv.de/medien/ifa/en/pub/rep/pdf/reports-2019/report0217e/rep0217e.pdf"
+  },
+  "2c3b0bbb7d3afa99dd1a89481c4e36f31de8d311b5e6cf6be56bc651ca9ed1c8": {
+    "title": "IFA — SISTEMA Cookbook 1",
+    "url": "https://www.dguv.de/medien/ifa/en/pra/softwa/sistema/kochbuch/sistema_cookbook1_end.pdf"
+  },
+  "af18cce5694c05f9a49d5296f0f4a842e7f874e8076fc1c864055df267f2f351": {
+    "title": "IFA — SISTEMA_ Getting started (Information of IFA)",
+    "url": "https://www.certifico.com/component/attachments/download/11114"
+  },
+  "85847f77a1d71993b19262138cd0c293d77a9d63b50060059e29587bfaf195e9": {
+    "title": "OSHA 3157 — A Guide for Protecting Workers from Woodworking Hazards",
+    "url": "https://www.osha.gov/sites/default/files/publications/osha3157.pdf"
+  },
+  "fab230fb8ab519771715af0cac111dc8f446c350b80800da20483823d431dcb7": {
+    "title": "OSHA 3170 — Safeguarding Equipment and Protecting Employees from Amputations",
+    "url": "https://www.osha.gov/sites/default/files/publications/osha3170.pdf"
+  },
+  "9fcd5f09968034413de568cde442768df6e76857e1da4b0ae7dc41167e443579": {
+    "title": "OSHA — Machine Guarding Checklist",
+    "url": "https://www.osha.gov/sites/default/files/2020-05/Machine%20Guarding%20Checklist.pdf"
+  },
+  "f71848b287814615cb3d7d5bb8d6caf6a3c7eeb8694de2612b04b24df94c9c5d": {
+    "title": "Pilz — SIL or PL_ What is the difference",
+    "url": "https://www.lcautomation.com/wb_documents/pilz/sil%20or%20pl%2C%20what%20is%20the%20difference.pdf"
+  },
+  "e8e3b3ea69f17967970035e3bb24a709c99c20df18eff3efcc72945667a5b637": {
+    "title": "Regulation (EU) 2023_1230 on machinery (Official Journal)",
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A32023R1230"
+  },
+  "e0425a64268606f01a0edfd2d97d9370da2b645d1bf16474640e33ecd9dbb43b": {
+    "title": "Rockwell — A Guide to the Machinery Regulation (EU) 2023_1230",
+    "url": "https://literature.rockwellautomation.com/idc/groups/literature/documents/sp/oem-sp123_-en-p.pdf"
+  },
+  "c9ca8f88d615c50a395e8caa4006ce2d8d9344fa4785fcd6e7b2c2427a8be16a": {
+    "title": "Rockwell — Machinery SafeBook 5",
+    "url": "https://literature.rockwellautomation.com/idc/groups/literature/documents/rm/safebk-rm002_-en-p.pdf"
+  },
+  "b76af1920f618e03a0d7966527d23fa5d7c60d1d2cb0836a9ab40808aff97169": {
+    "title": "Schmersal — Machine Guarding Safety Products (catalogue)",
+    "url": "https://www.libertyelectricproducts.com/downloads/Schmersal-Machine-Guarding-Safety-Products.pdf"
+  },
+  "1f0e3b70ae0aade9613813aaeae75c2ad7c83c4dbe4d7a4ea3206dd07f39709e": {
+    "title": "SICK — Guide for Safe Machinery_ Six Steps to a Safe Machine",
+    "url": "https://www.sick.com/media/docs/8/78/678/special_information_guide_for_safe_machinery_en_im0014678.pdf"
+  },
+  "2a4c4d290131dca6fc553d5a4e7c6cb860dc173fe8f7b87cf3624883d5c77037": {
+    "title": "SICK — Guidelines for Safe Machinery",
+    "url": "https://www.rae.ca/wp-content/uploads/GuidelinesForSafeMachinery.pdf"
+  },
+  "d7e9bd596935828d871db743c318dbc666e0f0efc406423f6edf8c7b25c1f5df": {
+    "title": "SICK — Safety Guide for the Americas",
+    "url": "https://www.sick.com/media/docs/6/06/606/special_information_safety_guide_for_the_americas_en_im0032606.pdf"
+  },
+  "5bbeb9c312359f3340242b7b9e4d437cd22836429401c78ac38066d04d685fa4": {
+    "title": "SLAC — Machine Guarding Guideline",
+    "url": "https://www-group.slac.stanford.edu/esh/eshmanual/references/toolsGuideMachineGuardOptions.pdf"
+  }
+}

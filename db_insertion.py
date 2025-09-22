@@ -5,12 +5,13 @@ def insert_chunks(chunks, db_path="doc_chunks.db"):
     
     for chunk in chunks:
         cursor.execute('''
-        INSERT INTO chunks (source_id, chunk_index,text,doc_path)
-        VALUES (?, ?, ?, ?)
+        INSERT INTO chunks (source_id, chunk_index,text,title,doc_path)
+        VALUES (?, ?, ?, ?, ?)
         ''', (
             chunk["source_id"],
             chunk["chunk_index"],
             chunk["text"],
+            chunk["title"],
             chunk["doc_path"]
         ))
     

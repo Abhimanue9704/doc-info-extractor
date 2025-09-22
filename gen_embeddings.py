@@ -51,7 +51,6 @@ def search(query, top_k):
     scores, indices = faiss_index.search(query_emb.reshape(1, -1), top_k)
     print(f"FAISS search results - scores: {scores[0]}, indices: {indices[0]}")
     
-    # 2. Get the FAISS embeddings and find matching ones in embeddings table
     conn = sqlite3.connect("doc_chunks.db")
     cursor = conn.cursor()
     
@@ -63,7 +62,6 @@ def search(query, top_k):
             print(f"  Skipping invalid index")
             continue
         
-        # Get the embedding from embeddings table by position
         cursor.execute("""
             SELECT source_id, chunk_index, embedding_vector 
             FROM embeddings 
@@ -78,9 +76,8 @@ def search(query, top_k):
             source_id, chunk_index, _ = emb_row
             print(f"  Found embedding: source_id={source_id[:8]}..., chunk_index={chunk_index}")
             
-            # 3. Get the actual text from chunks table
             cursor.execute("""
-                SELECT text, doc_path
+                SELECT text, title, doc_path
                 FROM chunks 
                 WHERE source_id = ? AND chunk_index = ?
             """, (source_id, chunk_index))
@@ -89,12 +86,13 @@ def search(query, top_k):
             print(f"  Chunks table query result: {chunk_row is not None}")
             
             if chunk_row:
-                text,doc_path = chunk_row
+                text,title,doc_path = chunk_row
                 result = {
                     'source_id': source_id,
                     'chunk_index': chunk_index, 
-                    'text': text,  # Truncate for debug
+                    'text': text, 
                     'similarity': float(score),
+                    'title':title,
                     'doc_path': doc_path
                 }
                 results.append(result)

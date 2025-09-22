@@ -9,6 +9,7 @@ def init_db(db_path="doc_chunks.db"):
         source_id TEXT,
         chunk_index INTEGER,
         text TEXT,
+        title TEXT,
         doc_path TEXT,
         PRIMARY KEY(source_id,chunk_index)
     )

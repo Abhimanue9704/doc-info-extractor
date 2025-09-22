@@ -7,12 +7,18 @@ from chunks import chunk_text_with_metadata
 from db_insertion import insert_chunks
 from db import init_db
 from gen_embeddings import generate_embeddings, build_faiss_index
-
+import json
 app = Flask(__name__)
 
 def clean_text(text):
-    text = re.sub(r'\uf0b7', '', text)
+    text = text.lower()
+    
+    text = re.sub(r'[\uf0b7\u2022\u25cf\u25cb]', '', text)
+    
+    text = re.sub(r'[^\w\s]', '', text)
+    
     text = re.sub(r'\s+', ' ', text)
+    
     return text.strip()
 
 def extract_text_from_pdf(file_path):
@@ -35,21 +41,49 @@ def upload_pdf():
     file_bytes = file.read()
     sha = hashlib.sha256(file_bytes).hexdigest()
 
-    os.makedirs("uploads", exist_ok=True)
-    new_pdf_path = os.path.join("uploads", f"{sha}.pdf")
-    with open(new_pdf_path, "wb") as f:
-        f.write(file_bytes)
+    json_file="sha_sources.json"
+    with open(json_file, "r", encoding="utf-8") as f:
+        data_dict = json.load(f)
 
-    raw_text = extract_text_from_pdf(new_pdf_path)
-    cleaned_text = clean_text(raw_text)
+    if sha in data_dict.keys():
+        title=data_dict[sha]["title"]
+        url=data_dict[sha]["url"]
+        os.makedirs("uploads", exist_ok=True)
+        new_pdf_path = os.path.join("uploads", f"{sha}.pdf")
+        with open(new_pdf_path, "wb") as f:
+            f.write(file_bytes)
 
-    chunks_with_meta = chunk_text_with_metadata(cleaned_text, sha, new_pdf_path)
-    init_db()
-    insert_chunks(chunks_with_meta)
-    embeddings = generate_embeddings(chunks_with_meta)
-    build_faiss_index(embeddings)
+        raw_text = extract_text_from_pdf(new_pdf_path)
+        cleaned_text = clean_text(raw_text)
 
-    return jsonify({"status": "success", "doc_id": sha, "chunks": len(chunks_with_meta)})
+        chunks_with_meta = chunk_text_with_metadata(cleaned_text, sha, title ,url)
+        init_db()
+        insert_chunks(chunks_with_meta)
+        embeddings = generate_embeddings(chunks_with_meta)
+        build_faiss_index(embeddings)
+
+        return jsonify({"status": "success", "doc_id": sha, "chunks": len(chunks_with_meta)})
+    else:
+        filename,ext=os.path.splitext(file.filename)
+        title=filename
+        
+        os.makedirs("uploads", exist_ok=True)
+        new_pdf_path = os.path.join("uploads", f"{sha}.pdf")
+        url=new_pdf_path
+
+        with open(new_pdf_path, "wb") as f:
+            f.write(file_bytes)
+
+        raw_text = extract_text_from_pdf(new_pdf_path)
+        cleaned_text = clean_text(raw_text)
+
+        chunks_with_meta = chunk_text_with_metadata(cleaned_text, sha, title ,url)
+        init_db()
+        insert_chunks(chunks_with_meta)
+        embeddings = generate_embeddings(chunks_with_meta)
+        build_faiss_index(embeddings)
+
+        return jsonify({"status": "success", "doc_id": sha, "chunks": len(chunks_with_meta)})
 
 if __name__ == "__main__":
     app.run(debug=True, port=5001)
