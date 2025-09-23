@@ -132,6 +132,7 @@ document-info-extractor/
 ├── requirements.txt      # Python dependencies
 ├── sources.json          # Document metadata
 ├── example.json          # 8 test questions
+├── curl_example.txt      # 2 curl requests example
 ├── db.py                 # Contains database schema
 └── README.md            # This file
 ```
