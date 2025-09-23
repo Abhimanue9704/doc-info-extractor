@@ -1,0 +1,34 @@
+[
+  {
+    "question": "Explain the essential health and safety requirements (EHSRs) regarding ergonomics, autonomous machinery, and protection against corruption in machinery.",
+    "mode": "reranker"
+  },
+  {
+    "question": "Define the 'point of operation' and explain the guarding requirements according to OSHA Subpart S.",
+    "mode": "baseline"
+  },
+  {
+    "question": "How does the Machinery Directive 2006/42/EC aim to ensure machinery safety, and what are the two compliance approaches?",
+    "mode": "reranker"
+  },
+  {
+    "question": "What are the main changes in the Machinery Regulation compared to the 2006 Directive, especially regarding functional safety, cybersecurity, AI, and obligations of economic operators?",
+    "mode": "baseline"
+  },
+  {
+    "question": "Under what conditions must physical guards be interlocked, and what are the essential requirements for interlocking devices according to ISO 14119?",
+    "mode": "reranker"
+  },
+  {
+    "question": "What is SISTEMA, and how does it support the analysis of safety-related parts of machine control systems according to EN ISO 13849-1?",
+    "mode": "baseline"
+  },
+  {
+    "question": "Explain the role of the EU standardisation framework and the procedure for establishing common specifications when harmonised standards are delayed or unavailable.",
+    "mode": "reranker"
+  },
+  {
+    "question": "What are the recommended coding practices and additional measures for safety-related software (SRESW/SRASW) for components with PLr c-d and c-e according to ISO 13849?",
+    "mode": "baseline"
+  }
+]

@@ -1,0 +1,121 @@
+======================================================== EXAMPLE CURL 1 ========================================================
+
+
+(env) E:\doc-info-extraction>curl -X POST http://localhost:5000/ask -H "Content-Type: application/json" -d "{\"k\": 3, \"mode\": \"baseline\", \"q\": \"What documents must be available to authorities to show compliance with the Machinery Directive?\"}" 
+{
+  "answer": "if compliance with these standards is ensured it can be assumed that the requirements of the machinery directive are also fulfilled",
+  "contexts": [
+    {
+      "answer": "part 3 steps to meet machinery directive requirements37 step 9 proving compliance before a machine can be placed on the market the manufacturer must ensure that the machine is implemented in conformance with harmonized standards",
+      "citation": {
+        "chunk_index": 89,
+        "doc_path": "uploads\\f6705b3bb525bcbeba2b938302acf239f766e7a02cf29e0674a22f1370f65c33.pdf",
+        "source_id": "f6705b3bb525bcbeba2b938302acf239f766e7a02cf29e0674a22f1370f65c33",
+        "title": "EN_TechnicalguideNo10_REVF"
+      },
+      "similarity": 0.7589660882949829
+    },
+    {
+      "answer": "if compliance with these standards is ensured it can be assumed that the requirements of the machinery directive are also fulfilled",
+      "citation": {
+        "chunk_index": 325,
+        "doc_path": "https://www.eaton.com/content/dam/eaton/markets/machinebuilding/service-and-support/documents/eaton-safety-manual-pu05907001z-en-us.pdf",
+        "source_id": "d83428a2267bb7a0a4846c0748092f28798fdfa1df6baebb8233028038c5b4dc",
+        "title": "Eaton \u2014 Safety Manual (EN ISO 13849-1 and IEC 62061)"
+      },
+      "similarity": 0.8152447938919067
+    },
+    {
+      "answer": "the technical file demonstrates that the machine is in accordance with the regulations presented in the machinery directive",
+      "citation": {
+        "chunk_index": 90,
+        "doc_path": "uploads\\f6705b3bb525bcbeba2b938302acf239f766e7a02cf29e0674a22f1370f65c33.pdf",
+        "source_id": "f6705b3bb525bcbeba2b938302acf239f766e7a02cf29e0674a22f1370f65c33",
+        "title": "EN_TechnicalguideNo10_REVF"
+      },
+      "similarity": 0.7778822779655457
+    }
+  ],
+  "reranker_used": false
+}
+
+(env) E:\doc-info-extraction>curl -X POST http://localhost:5000/ask -H "Content-Type: application/json" -d "{\"k\": 3, \"mode\": \"reranker\", \"q\": \"What documents must be available to authorities to show compliance with the Machinery Directive?\"}"    
+{
+  "answer": "part 3 steps to meet machinery directive requirements37 step 9 proving compliance before a machine can be placed on the market the manufacturer must ensure that the machine is implemented in conformance with harmonized standards",
+  "contexts": [
+    {
+      "answer": "part 3 steps to meet machinery directive requirements37 step 9 proving compliance before a machine can be placed on the market the manufacturer must ensure that the machine is implemented in conformance with harmonized standards",
+      "citation": {
+        "chunk_index": 89,
+        "doc_path": "uploads\\f6705b3bb525bcbeba2b938302acf239f766e7a02cf29e0674a22f1370f65c33.pdf",
+        "source_id": "f6705b3bb525bcbeba2b938302acf239f766e7a02cf29e0674a22f1370f65c33",
+        "title": "EN_TechnicalguideNo10_REVF"
+      },
+      "similarity": 0.7158916464218726
+    }
+  ],
+  "reranker_used": true
+}
+
+
+
+======================================================== EXAMPLE CURL 2 ========================================================
+
+(env) E:\doc-info-extraction>curl -X POST http://localhost:5000/ask -H "Content-Type: application/json" -d "{\"k\": 3, \"mode\": \"baseline\", \"q\": \"What are the key changes introduced by the current Machinery Directive 2006/42/EC compared to the former 98/37/EC, and what responsibilities does the manufacturer have to ensure conformity, including risk assessment, technical files, conformity assessment, EC Declaration, CE marking, and provision of safe use instructions?\"}"
+{
+  "answer": "new machines the machinery directive from 29 december 2009 the new machinery directive 200642ec compels machine manufacturers to meet a minimum set of requirements before a machine may be placed on the market within the eea",
+  "contexts": [
+    {
+      "answer": "the technical file demonstrates that the machine is in accordance with the regulations presented in the machinery directive",
+      "citation": {
+        "chunk_index": 52,
+        "doc_path": "uploads\\ecca0e08247ce50b98294084a5950dabfeb6940565214f001c296166edd26fd2.pdf",
+        "source_id": "ecca0e08247ce50b98294084a5950dabfeb6940565214f001c296166edd26fd2",
+        "title": "Safety and functional safety, A general guide"
+      },
+      "similarity": 0.7276607155799866
+    },
+    {
+      "answer": "3machinery safe book 5 regulations the machinery directive the machinery directive covers the supply of new machinery and other equipment including safety components",
+      "citation": {
+        "chunk_index": 7,
+        "doc_path": "https://literature.rockwellautomation.com/idc/groups/literature/documents/rm/safebk-rm002_-en-p.pdf",      
+        "source_id": "c9ca8f88d615c50a395e8caa4006ce2d8d9344fa4785fcd6e7b2c2427a8be16a",
+        "title": "Rockwell \u2014 Machinery SafeBook 5"
+      },
+      "similarity": 0.6713370084762573
+    },
+    {
+      "answer": "new machines the machinery directive from 29 december 2009 the new machinery directive 200642ec compels machine manufacturers to meet a minimum set of requirements before a machine may be placed on the market within the eea",
+      "citation": {
+        "chunk_index": 2,
+        "doc_path": "uploads\\c547ccdbf7e33cff6ea7847704e6622f84f4d7cea7c6e6091a7406c37d4c34dd.pdf",
+        "source_id": "c547ccdbf7e33cff6ea7847704e6622f84f4d7cea7c6e6091a7406c37d4c34dd",
+        "title": "Machine-Safety-Brochure-Guide"
+      },
+      "similarity": 0.7456678748130798
+    }
+  ],
+  "reranker_used": false
+}
+
+(env) E:\doc-info-extraction>curl -X POST http://localhost:5000/ask -H "Content-Type: application/json" -d "{\"k\": 3, \"mode\":
+ \"reranker\", \"q\": \"What are the key changes introduced by the current Machinery Directive 2006/42/EC compared to the former 98/37/EC, and what responsibilities does the manufacturer have to ensure conformity, including risk assessment, technical files, conformity assessment, EC Declaration, CE marking, and provision of safe use instructions?\"}"
+{
+  "answer": "machine manufacturers or their authorised representatives within the eu must ensure that the machine is compliant the technical file can be made available to the enforcing authorities on request the ce marking is affixed and a declaration of conformity has been signed before the machine may be placed on the market within the eaadesignmanufacture installation adjustmentoperation maintenancewhy safety 8 9 9existing machines the work equipment directive the user has obligations defined by the use of",
+  "contexts": [
+    {
+      "answer": "machine manufacturers or their authorised representatives within the eu must ensure that the machine is compliant the technical file can be made available to the enforcing authorities on request the ce marking is affixed and a declaration of conformity has been signed before the machine may be placed on the market within the eaadesignmanufacture installation adjustmentoperation maintenancewhy safety 8 9 9existing machines the work equipment directive the user has obligations defined by the use of",
+      "citation": {
+        "chunk_index": 2,
+        "doc_path": "uploads\\c547ccdbf7e33cff6ea7847704e6622f84f4d7cea7c6e6091a7406c37d4c34dd.pdf",
+        "source_id": "c547ccdbf7e33cff6ea7847704e6622f84f4d7cea7c6e6091a7406c37d4c34dd",
+        "title": "Machine-Safety-Brochure-Guide"
+      },
+      "similarity": 0.6046165328276785
+    }
+  ],
+  "reranker_used": true
+}
+
+(env) E:\doc-info-extraction>
