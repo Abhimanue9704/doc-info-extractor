@@ -164,4 +164,5 @@ document-info-extractor/
 
 ## Testing
 
-The repository includes `8-questions.json` with test queries designed to evaluate both baseline and reranker performance across different types of document content and query complexity.
+The repository includes `example.json` with 8 test queries designed to evaluate both baseline and reranker performance across different types of document content and query complexity.
+The repository includes 'curl_example.txt' with 2 curl requests one easy and one tricky.
