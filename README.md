@@ -21,7 +21,7 @@ A comprehensive document ingestion, embedding, search, and reranking pipeline wi
 
 1. **Clone the repository:**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Abhimanue9704/doc-info-extractor.git
    cd document-info-extractor
    ```
 
